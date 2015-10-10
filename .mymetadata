@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-module
+  type="WEB"
+  name="SweetHouse"
+  id="myeclipse.1441549229042"
+  context-root="/SweetHouse"
+  j2ee-spec="5.0"
+  archive="SweetHouse.war">
+  <attributes>
+    <attribute name="webrootdir" value="WebRoot" />
+  </attributes>
+</project-module>
+

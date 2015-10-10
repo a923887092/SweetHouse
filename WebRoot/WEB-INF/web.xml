@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.5" 
+	xmlns="http://java.sun.com/xml/ns/javaee" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+	http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+  <display-name></display-name>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>CheckLogin</servlet-name>
+    <servlet-class>com.gwm.sweethouse.servlet.Checklogin</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>VerifyCodeServlet</servlet-name>
+    <servlet-class>com.gwm.sweethouse.servlet.VerifyCodeServlet</servlet-class>
+  </servlet>
+  <!-- <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>checkCodeServlet</servlet-name>
+    <servlet-class>com.gwm.sweethouse.servlet.CheckCodeServlet</servlet-class>
+  </servlet> -->
+ <!--  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>checkLogin</servlet-name>
+    <servlet-class>com.gwm.sweethouse.servlet.CheckLoginServlet</servlet-class>
+  </servlet> -->
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>userServlet</servlet-name>
+    <servlet-class>com.gwm.sweethouse.servlet.UserServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>ProductDlServlet</servlet-name>
+    <servlet-class>com.gwm.sweethouse.servlet.ProductDlServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>ProductServlet</servlet-name>
+    <servlet-class>com.gwm.sweethouse.servlet.ProductServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>ProductXlServlet</servlet-name>
+    <servlet-class>com.gwm.sweethouse.servlet.ProductXlServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>SelectChangeServlet</servlet-name>
+    <servlet-class>com.gwm.sweethouse.servlet.SelectChangeServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>TopPicServlet</servlet-name>
+    <servlet-class>com.gwm.sweethouse.servlet.TopPicServlet</servlet-class>
+  </servlet>
+
+
+
+<servlet-mapping>
+    <servlet-name>CheckLogin</servlet-name>
+    <url-pattern>/checkLogin</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>VerifyCodeServlet</servlet-name>
+    <url-pattern>/VerifyCodeServlet</url-pattern>
+  </servlet-mapping>
+
+
+
+ <!--  <servlet-mapping>
+    <servlet-name>checkCodeServlet</servlet-name>
+    <url-pattern>/checkCode</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>checkLogin</servlet-name>
+    <url-pattern>/checkLogin</url-pattern>
+  </servlet-mapping> -->
+  <servlet-mapping>
+    <servlet-name>userServlet</servlet-name>
+    <url-pattern>/userServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ProductDlServlet</servlet-name>
+    <url-pattern>/productDlServlet</url-pattern>
+  </servlet-mapping>	
+  <servlet-mapping>
+    <servlet-name>ProductServlet</servlet-name>
+    <url-pattern>/ProductServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ProductXlServlet</servlet-name>
+    <url-pattern>/productXlServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>SelectChangeServlet</servlet-name>
+    <url-pattern>/selectChangeServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>TopPicServlet</servlet-name>
+    <url-pattern>/topPicServlet</url-pattern>
+  </servlet-mapping>	
+  
+  <welcome-file-list>
+    <welcome-file>index.jsp</welcome-file>
+  </welcome-file-list>
+</web-app>
