@@ -37,7 +37,7 @@
 <script type="text/javascript" src="assets/js/config-min.js"></script>
 <script>
     BUI.use('common/main',function(){
-        var config = [{id:'1',menu:[{text:'系统管理',items:[{id:'12',text:'大类管理',href:'productDlServlet?method=getProductDl'},{id:'3',text:'小类管理',href:'productXlServlet?method=getProductXl'},{id:'4',text:'用户管理',href:'userServlet?method=getUsers'},{id:'5',text:'轮播管理',href:'TopPicServlet?method=getUsers'},{id:'6',text:'商品管理',href:'ProductServlet?method=getProduct'}]}]},{id:'7',homePage : '9',menu:[{text:'业务管理',items:[{id:'9',text:'查询业务',href:'Node/index.html'}]}]}];
+        var config = [{id:'1',menu:[{text:'系统管理',items:[{id:'12',text:'大类管理',href:'productDlServlet?method=getProductDl'},{id:'3',text:'小类管理',href:'productXlServlet?method=getProductXl'},{id:'4',text:'用户管理',href:'userServlet?method=getUsers'},{id:'5',text:'轮播管理',href:'TopPicServlet?method=getUsers'},{id:'6',text:'商品管理',href:'ProductServlet?method=getProduct'},{id:'7',text:'推荐管理',href:'recommendServlet?method=getProduct'}]}]},{id:'7',homePage : '9',menu:[{text:'业务管理',items:[{id:'9',text:'查询业务',href:'Node/index.html'}]}]}];
         new PageUtil.MainPage({
             modulesConfig : config
         });

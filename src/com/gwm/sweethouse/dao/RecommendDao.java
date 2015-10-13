@@ -1,22 +1,25 @@
 package com.gwm.sweethouse.dao;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import com.gwm.sweethouse.bean.Product;
+import com.gwm.sweethouse.bean.Recommend;
 import com.gwm.sweethouse.web.CriteriaProduct;
 import com.gwm.sweethouse.web.Page;
 
-public interface RecommendDao<Product> {
-    Product getProduct(int id);
+public interface RecommendDao<Reconmmend> {
+	Reconmmend getReconmmend(int id);
 	
-	Page<Product> getPage(CriteriaProduct cp); 
+	Page<Reconmmend> getPage(CriteriaProduct cp); 
 	
-	long getTotalProductNum(CriteriaProduct cp);
+	long getTotalReconmmendNum(CriteriaProduct cp);
 	
-	List<Product> getPageList(CriteriaProduct cp, int pageSize);
+	List<Reconmmend> getPageList(CriteriaProduct cp, int pageSize);
 	
-	void add(Product product);
-	void add2(Product product);
-	void delete(int id);
-	void update(Product p);
+	ArrayList<Recommend> getRecommendList();
+//	void add(Reconmmend reconmmend);
+//	void add2(Reconmmend reconmmend);
+//	void delete(int id);
+//	void update(Reconmmend p);
 }
