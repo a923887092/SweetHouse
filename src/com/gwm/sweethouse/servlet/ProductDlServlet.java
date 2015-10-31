@@ -107,7 +107,6 @@ public class ProductDlServlet extends HttpServlet {
 		if(id != 0){
 			if(categoryName != ""){
 				categoryName = new String(categoryName.getBytes("ISO-8859-1"),"utf-8");
-				productDlService.addProductDl(categoryName);
 				productDlService.update(categoryName, id);
 				request.getRequestDispatcher("productDlServlet?method=getProductDl").forward(request, response);
 			} else {

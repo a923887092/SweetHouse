@@ -15,5 +15,7 @@ public interface UserDao<User> {
 	List<User> getPageList(CriteriaUser cu, int pageSize);
 	
 	int getState(Integer id);
+	
+	public String getUserPhoto(int userId);
 
 }

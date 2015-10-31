@@ -10,5 +10,18 @@ public class UserService {
 	public Page<User> getPage(CriteriaUser cu){
 		return userDaoImpl.getPage(cu);
 	}
+	public void addUser(User user) {
+		// TODO Auto-generated method stub
+		userDaoImpl.addUser(user);
+	}
+	public User loginUser(String phoneNum) {
+		return userDaoImpl.loginUser(phoneNum);
+	}
+	public String getUserPhoto(int userId) {
+		// TODO Auto-generated method stub
+		
+		return userDaoImpl.getUserPhoto(userId);
+	}
+	
 	
 }

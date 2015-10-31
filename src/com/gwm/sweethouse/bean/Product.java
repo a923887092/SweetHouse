@@ -10,7 +10,15 @@ public class Product {
 	private String product_photo;
 	private int product_sum;
 	private String product_desc;
+	private int saled_num;
 	
+	public int getSaled_num() {
+		return saled_num;
+	}
+	public void setSaled_num(int saled_num) {
+		this.saled_num = saled_num;
+	}
+
 	public int getProduct_id() {
 		return product_id;
 	}
@@ -82,32 +90,31 @@ public class Product {
 	public void setProduct_desc(String productDesc) {
 		product_desc = productDesc;
 	}
-
 	@Override
 	public String toString() {
-		return "Product [comment_counts=" + comment_counts + ", product_desc="
-				+ product_desc + ", product_discount=" + product_discount
-				+ ", product_id=" + product_id + ", product_name="
-				+ product_name + ", product_photo=" + product_photo
-				+ ", product_price=" + product_price + ", product_sum="
-				+ product_sum + ", xl_id=" + xl_id + "]";
+		return "Product [product_id=" + product_id + ", product_name="
+				+ product_name + ", xl_id=" + xl_id + ", product_price="
+				+ product_price + ", comment_counts=" + comment_counts
+				+ ", product_discount=" + product_discount + ", product_photo="
+				+ product_photo + ", product_sum=" + product_sum
+				+ ", product_desc=" + product_desc + ", saled_num=" + saled_num
+				+ "]";
 	}
-
-	public Product(int productId, String productName, int xlId,
-			float productPrice, int commentCounts, float productDiscount,
-			String productPhoto, int productSum, String productDesc) {
-		super();
-		product_id = productId;
-		product_name = productName;
-		xl_id = xlId;
-		product_price = productPrice;
-		comment_counts = commentCounts;
-		product_discount = productDiscount;
-		product_photo = productPhoto;
-		product_sum = productSum;
-		product_desc = productDesc;
+	public Product(int product_id, String product_name, int xl_id,
+			float product_price, int comment_counts, float product_discount,
+			String product_photo, int product_sum, String product_desc,
+			int saled_num) {
+		this.product_id = product_id;
+		this.product_name = product_name;
+		this.xl_id = xl_id;
+		this.product_price = product_price;
+		this.comment_counts = comment_counts;
+		this.product_discount = product_discount;
+		this.product_photo = product_photo;
+		this.product_sum = product_sum;
+		this.product_desc = product_desc;
+		this.saled_num = saled_num;
 	}
-
 	public Product() {
 		
 	}

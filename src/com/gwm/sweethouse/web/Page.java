@@ -8,7 +8,7 @@ public class Page<T> {
 	
 	private List<T> list;
 	//
-	private int pageSize = 5;
+	private int pageSize = 6;
 	
 	private long totalItemNum;
 
@@ -22,9 +22,9 @@ public class Page<T> {
 			pageNo = 1;
 		}
 		
-		if (pageNo > getTotalPageNum()) {
-			pageNo = getTotalPageNum();
-		}
+//		if (pageNo > getTotalPageNum()) {
+//			pageNo = getTotalPageNum();
+//		}
 		return pageNo;
 	}
 	

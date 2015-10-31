@@ -1,5 +1,6 @@
 package com.gwm.sweethouse.dao.impl;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import com.gwm.sweethouse.bean.ProductDl;
@@ -20,7 +21,7 @@ public class ProductXlDaoImpl extends BaseDao<ProductXl> implements ProductXlDao
 		page.setTotalItemNum(getTotalProductNum(cp));
 		//校验pageNo是否合法
 		cp.setPageNo(page.getPageNo());
-		page.setList(getPageList(cp, 5));
+		page.setList(getPageList(cp, 6));
 		return page;
 	}
 
@@ -34,9 +35,9 @@ public class ProductXlDaoImpl extends BaseDao<ProductXl> implements ProductXlDao
 		return queryForList(sql, cp.getCatename(), (cp.getPageNo() - 1) * pageSize, pageSize);
 	}
 
-	public void addProductXl(String pd, int dl_id) {
-		String sql = "insert into product_xl (xl_name, dl_id) values (?, ?)";
-		update(sql, pd, dl_id);
+	public void addProductXl(String pd, int dl_id, String xl_pic) {
+		String sql = "insert into product_xl (xl_name, dl_id, xl_pic) values (?, ?, ?)";
+		update(sql, pd, dl_id, xl_pic);
 	}
 
 	public void deleteProductXl(int id) {
@@ -60,5 +61,10 @@ public class ProductXlDaoImpl extends BaseDao<ProductXl> implements ProductXlDao
 	public List<ProductXl> getXlByDl(int dl_id) {
 		String sql = "select * from product_xl where dl_id = ?";
 		return queryForList(sql, dl_id);
+	}
+
+	public ArrayList<ProductXl> getXlList(ProductDl pd) {
+		String sql = "select * from product_xl where dl_id = ?";
+		return (ArrayList<ProductXl>) queryForList(sql, pd.getDl_id());
 	}
 }

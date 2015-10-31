@@ -50,6 +50,10 @@
         <td><input type="text" name="categoryName"/></td>
     </tr>   
     <tr>
+        <td class="tableleft">分类图片</td>
+        <td><input type="file" name="productPic" id="file" class="custom-file-input"></td>
+    </tr>   
+    <tr>
         <td class="tableleft"></td>
         <td>
             <button type="submit" class="btn btn-primary" type="button">添加</button>&nbsp;&nbsp;<button type="button" class="btn btn-success" name="backid" id="backid">返回列表</button>

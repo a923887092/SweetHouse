@@ -23,10 +23,14 @@ public class RecommendDaoImpl extends BaseDao<Recommend> implements RecommendDao
 	@Override
 	public Page<Recommend> getPage(CriteriaProduct cp) {
 		Page<Recommend> page = new Page<Recommend>(cp.getPageNo());
+		System.out.println("getPage" + cp.getPageNo());
 		page.setTotalItemNum(getTotalReconmmendNum(cp));
 		//校验pageNo是否合法
 		cp.setPageNo(page.getPageNo());
-		page.setList(getPageList(cp, 5));
+		System.out.println("wuyu0:" + getTotalReconmmendNum(cp));
+		System.out.println("wuyu1:" + page.getPageNo());
+		System.out.println("wuyu:" + page.getPageNo());
+		page.setList(getPageList(cp, 6));
 		return page;
 	}
 	@Override
@@ -39,9 +43,11 @@ public class RecommendDaoImpl extends BaseDao<Recommend> implements RecommendDao
 	public List<Recommend> getPageList(CriteriaProduct cp, int pageSize) {
 		String sql = "SELECT b.`rec_id`,b.`product_id`,a.`product_name`," +
 				"a.`product_photo`,a.`product_desc`,a.`product_price` " +
-				"FROM product_info a JOIN	" +
+				"FROM product_info a JOIN " +
 				"pro_recommend b ON a.`product_id`=b.`product_id` " +
 				"WHERE a.`product_name` LIKE ? limit ?, ?";
+		System.out.println("666666666666" + (cp.getPageNo() - 1) * pageSize);
+		System.out.println("666666666666" + cp.getPageNo());
 		return queryForList(sql, cp.getProductname(), 
 				(cp.getPageNo() - 1) * pageSize, pageSize);
 	}
@@ -53,6 +59,12 @@ public class RecommendDaoImpl extends BaseDao<Recommend> implements RecommendDao
 				"FROM product_info a JOIN	" +
 				"pro_recommend b ON a.`product_id`=b.`product_id`";
 		return (ArrayList<Recommend>) queryForList(sql);
+	}
+
+	public void update(int recId, int productId) {
+		// TODO Auto-generated method stub
+		String sql = "update pro_recommend set product_id = ? where rec_id = ?";
+		update(sql, productId, recId);
 	}
 
 	/*@Override

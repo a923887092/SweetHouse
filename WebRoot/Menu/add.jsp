@@ -104,6 +104,10 @@
         <td><input type="text" name="productSum"/></td>
     </tr>   
     <tr>
+        <td class="tableleft">商品数量</td>
+        <td><input type="text" name="saledNum"/></td>
+    </tr>   
+    <tr>
         <td class="tableleft">商品描述</td>
         <td><input type="text" name="productDesc"/></td>
     </tr>   

@@ -36,4 +36,12 @@ public class RecommendService {
 	public void update(Product product) {
 		recommendDaoImpl.update(product);
 	}*/
+	public Recommend getRecommend(int id) {
+		// TODO Auto-generated method stub
+		return recommendDaoImpl.getReconmmend(id);
+	}
+	public void update(int recId, int productId) {
+		// TODO Auto-generated method stub
+		recommendDaoImpl.update(recId, productId);
+	}
 }

@@ -29,15 +29,16 @@ public class ProductDlDaoImplTest {
 	}
 	@Test
 	public void testGetTotalUserNum() {
-		String sql = "select * from product_info" +
-				" where product_id = ?";
-		       System.out.println(productDaoImpl.query(sql, 7));
+		String sql = "select * from product_info where (xl_id = ? and product_name like ?)" +
+				" or (xl_id = ? and product_desc like ?) order by product_price desc limit ?, ?";
+		       System.out.println(productDaoImpl.queryForList(sql, 8, "%", 8, "%", 0, 6));
 	}
 
 	@Test
 	public void testGetPageList() {
-		String sql = "select count(xl_id) from product_xl where xl_name like ?";
-		System.out.println(productXlDaoImpl.getSingleVal(sql, "%"));
+		String sql = "select count(product_id) from product_info where (product_price BETWEEN ? AND ? and xl_id = ? and product_name like ?)"
+				+ " or (product_price BETWEEN ? AND ? and xl_id = ? and product_desc like ?)";
+		System.out.println(productXlDaoImpl.getSingleVal(sql, 200, 800, 8, "%", 200, 800, 8, "%"));
 	}
 
 	@Test

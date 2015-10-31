@@ -1,5 +1,6 @@
 package com.gwm.sweethouse.dao;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import com.gwm.sweethouse.bean.ProductDl;
@@ -17,7 +18,7 @@ public interface ProductXlDao<ProductXl> {
 	
 	List<ProductXl> getPageList(CriteriaProductXl cp, int pageSize);
 	
-	void addProductXl(String pd, int dl_id);
+	void addProductXl(String pd, int dl_id, String xl_pic);
 	
 	void deleteProductXl(int id);
 	
@@ -26,4 +27,6 @@ public interface ProductXlDao<ProductXl> {
 	List<ProductXl> getAllXl();
 	
 	List<ProductXl> getXlByDl(int dl_id);
+	
+	ArrayList<ProductXl> getXlList(ProductDl pd);
 }

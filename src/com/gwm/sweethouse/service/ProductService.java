@@ -1,5 +1,7 @@
 package com.gwm.sweethouse.service;
 
+import java.util.ArrayList;
+
 import com.gwm.sweethouse.bean.Product;
 import com.gwm.sweethouse.dao.impl.ProductDaoImpl;
 import com.gwm.sweethouse.web.CriteriaProduct;
@@ -27,5 +29,27 @@ public class ProductService {
 	}
 	public void update(Product product) {
 		productDaoImpl.update(product);
+	}
+	
+	public ArrayList<Product> getProductForList(int xl_id){
+		return productDaoImpl.getProductForList(xl_id);
+	}
+	public ArrayList<Product> getAllProduct() {
+		// TODO Auto-generated method stub
+		return productDaoImpl.getAllProduct();
+		
+	}
+	public Page<Product> getProductPage(int id, CriteriaProduct cp) {
+		// TODO Auto-generated method stub
+		return productDaoImpl.getPageForXl(id, cp);
+	}
+	public Page<Product> getProductPage(int id, CriteriaProduct cp, int d) {
+		// TODO Auto-generated method stub
+		return productDaoImpl.getPageForXl(id, cp, d);
+	}
+	public Page<Product> getProductPage(int id, CriteriaProduct cp,
+			int minPrice, int maxPrice) {
+		// TODO Auto-generated method stub
+		return productDaoImpl.getPageForXl(id, cp, minPrice, maxPrice);
 	}
 }

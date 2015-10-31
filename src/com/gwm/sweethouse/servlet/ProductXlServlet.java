@@ -3,6 +3,7 @@ package com.gwm.sweethouse.servlet;
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.ServletException;
@@ -10,6 +11,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.google.gson.Gson;
 import com.gwm.sweethouse.bean.ProductDl;
 import com.gwm.sweethouse.bean.ProductXl;
 import com.gwm.sweethouse.service.ProductDlService;
@@ -82,9 +84,11 @@ public class ProductXlServlet extends HttpServlet {
 		System.out.println(parentStr);
 		int dl_id = productDlService.getDlItem(parentStr).getDl_id();
 		String categoryName = request.getParameter("categoryName");
-		if(categoryName != ""){
+		String productPic = request.getParameter("productPic");
+		if(categoryName != "" && productPic != null){
 			categoryName = new String(categoryName.getBytes("ISO-8859-1"),"utf-8");
-			productXlService.addProductXl(categoryName, dl_id);
+			productPic = new String(productPic.getBytes("ISO-8859-1"),"utf-8");
+			productXlService.addProductXl(categoryName, dl_id, "/image/" + productPic);
 			request.getRequestDispatcher("productXlServlet?method=getProductXl").forward(request, response);
 		} else {
 			request.setAttribute("errorCode", "分类名称不能为空！");
@@ -133,9 +137,23 @@ public class ProductXlServlet extends HttpServlet {
 			request.getRequestDispatcher("Xl/edit.jsp").forward(request, response);
 		}
 	}
-	
+	protected void getJson(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		request.setCharacterEncoding("UTF-8");
+		String dlName = request.getParameter("dlName");
+		dlName = new String(dlName.getBytes("ISO-8859-1"),"utf-8");
+		System.out.println("dlName:+++++"+dlName);
+		ProductDl pd = productDlService.getDlItem(dlName);
+		ArrayList<ProductXl> list = productXlService.getList(pd);
+		Gson gson = new Gson();
+		String json = gson.toJson(list);
+		System.out.println(json);
+		response.getOutputStream().write(json.getBytes("UTF-8"));
+		response.setContentType("text/json; charset=UTF-8");
+	}
 	protected void update(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		String productPic = request.getParameter("productPic");
 		String categoryName = request.getParameter("categoryName");
 		String idstr = request.getParameter("categoryId");
 		String parenIdstr = request.getParameter("parentId");
@@ -146,9 +164,10 @@ public class ProductXlServlet extends HttpServlet {
 			parentId = Integer.parseInt(parenIdstr);
 		} catch (NumberFormatException e) {}
 		if(id != 0 && parentId != 0){
-			if(categoryName != ""){
+			if(categoryName != "" && productPic != null){
+				productPic = new String(productPic.getBytes("ISO-8859-1"),"utf-8");
 				categoryName = new String(categoryName.getBytes("ISO-8859-1"),"utf-8");
-				ProductXl px = new ProductXl(id, categoryName, parentId);
+				ProductXl px = new ProductXl(id, categoryName, parentId, productPic);
 				productXlService.update(px);
 				request.getRequestDispatcher("productXlServlet?method=getProductXl").forward(request, response);
 			} else {

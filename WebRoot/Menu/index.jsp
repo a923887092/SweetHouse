@@ -61,6 +61,7 @@ body {
 				<th>商品价格</th>
 				<th>商品折扣</th>
 				<th>商品数量</th>
+				<th>已售数量</th>
 				<th>商品描述</th>
 				<th>编辑</th>
 			</tr>
@@ -73,8 +74,9 @@ body {
 				<td>${product.product_price }</td>
 				<td>${product.product_discount }</td>
 				<td>${product.product_sum }</td>
+				<td>${product.saled_num }</td>
 				<td>${product.product_desc }</td>
-				<td><a href="ProductServlet?method=getDLAndXl&id=${product.product_id }">修改</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="ProductServlet?method=delete&id=${product.product_id }">删除</a></td>
+				<td><a href="ProductServlet?method=getDlAndXlAndUpdate&id=${product.product_id }">修改</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="ProductServlet?method=delete&id=${product.product_id }">删除</a></td>
 			</tr>
 		</c:forEach>
 	</table>
@@ -105,7 +107,7 @@ body {
 
 		$('#addnew').click(function() {
 
-			window.location.href = "ProductServlet?method=getDlAndXl";
+			window.location.href = "ProductServlet?method=getDlAndXlAndAdd";
 		});
 
 	});

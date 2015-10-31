@@ -68,54 +68,19 @@
 
     </style>
 </head>
-<form action="ProductServlet?method=update" method="post">
+<form action="recommendServlet?method=update" method="post">
 <table class="table table-bordered table-hover definewidth m10">
 	 <tr>
-        <td width="10%" class="tableleft">所属分类</td>
+        <td width="10%" class="tableleft">选择商品</td>
         <td>
-        <select name="productDl" id="productDl" onchange="selectchange();">
-        	<c:forEach items="${listDls }" var="product_dl">
-        		<option value="${product_dl.dl_id }">${product_dl.dl_name }</option>
-        	</c:forEach>         
-        </select>
-        &nbsp;&nbsp;&nbsp;&nbsp;
-        
-        <select name="productXl" id="productXl">
-        	<c:forEach items="${listXls }" var="product_xl">
-        		<option value="${product_xl.xl_id }">${product_xl.xl_name }</option>
+        <select name="product_id" id="product">
+        	<c:forEach items="${products }" var="product">
+        		<option value="${product.product_id }">${product.product_name }</option>
         	</c:forEach>         
         </select>
         </td>
     </tr>
-    <input type="hidden" name="productId" value="${product.product_id }"/>
-    <tr>
-        <td class="tableleft" >商品名称</td>
-        <td><input type="text" name="productName" value="${product.product_name }"/></td>
-    </tr>   
-    <tr>
-        <td class="tableleft">商品价格</td>
-        <td><input type="text" name="productPrice" value="${product.product_price }"/></td>
-    </tr>   
-    <tr>
-        <td class="tableleft">评价数量</td>
-        <td><input type="text" name="commountCount" value="${product.comment_counts }"/></td>
-    </tr>   
-    <tr>
-        <td class="tableleft">折扣</td>
-        <td><input type="text" name="productDis" value="${product.product_discount }"/></td>
-    </tr>   
-    <tr>
-        <td class="tableleft">商品图片</td>
-        <td><input type="file" name="productPic" id="file" class="custom-file-input" value="${product.product_photo }"/></td>
-    </tr>   
-    <tr>
-        <td class="tableleft">商品数量</td>
-        <td><input type="text" name="productSum" value="${product.product_sum }"/></td>
-    </tr>   
-    <tr>
-        <td class="tableleft">商品描述</td>
-        <td><input type="text" name="productDesc" value="${product.product_desc }"/></td>
-    </tr>   
+    <input type="hidden" name="recId" value="${recommend.rec_id }"/>   
     <tr>
         <td class="tableleft"></td>
         <td>

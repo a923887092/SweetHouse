@@ -1,7 +1,9 @@
 package com.gwm.sweethouse.service;
 
+import java.util.ArrayList;
 import java.util.List;
 
+import com.gwm.sweethouse.bean.ProductDl;
 import com.gwm.sweethouse.bean.ProductXl;
 import com.gwm.sweethouse.dao.impl.ProductXlDaoImpl;
 import com.gwm.sweethouse.web.CriteriaProductXl;
@@ -16,8 +18,8 @@ public class ProductXlService {
 	public Page<ProductXl> getPage(CriteriaProductXl cp){
 		return productXlDaoImpl.getPage(cp);
 	}
-	public void addProductXl(String pd, int dl_id){
-		productXlDaoImpl.addProductXl(pd, dl_id);
+	public void addProductXl(String pd, int dl_id, String xl_pic){
+		productXlDaoImpl.addProductXl(pd, dl_id, xl_pic);
 	}
 	public void delete(int id){
 		productXlDaoImpl.deleteProductXl(id);
@@ -31,5 +33,8 @@ public class ProductXlService {
 	}
 	public List<ProductXl> getXlByDl(int dl_id) {
 		return productXlDaoImpl.getXlByDl(dl_id);
+	}
+	public ArrayList<ProductXl> getList(ProductDl pd) {
+		return productXlDaoImpl.getXlList(pd);
 	}
 }

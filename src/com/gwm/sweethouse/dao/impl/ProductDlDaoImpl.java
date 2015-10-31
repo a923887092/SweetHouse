@@ -19,7 +19,7 @@ public class ProductDlDaoImpl extends BaseDao<ProductDl> implements ProductDlDao
 		page.setTotalItemNum(getTotalProductNum(cp));
 		//校验pageNo是否合法
 		cp.setPageNo(page.getPageNo());
-		page.setList(getPageList(cp, 5));
+		page.setList(getPageList(cp, 6));
 		return page;
 	}
 

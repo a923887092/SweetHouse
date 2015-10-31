@@ -46,7 +46,11 @@
     <tr>
         <td class="tableleft">分类名称</td>
         <td><input type="text" name="categoryName" value="${productXlItem.xl_name }"/></td>
-    </tr>   
+    </tr>  
+    <tr>
+        <td class="tableleft">分类图片</td>
+        <td><input type="file" name="productPic" id="file" value="${productXlItem.xl_pic }" class="custom-file-input"></td>
+    </tr> 
     <tr>
         <td class="tableleft"></td>
         <td>

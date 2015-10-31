@@ -69,6 +69,89 @@
     <servlet-name>RecommendServlet</servlet-name>
     <servlet-class>com.gwm.sweethouse.servlet.RecommendServlet</servlet-class>
   </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>ActivityServlet</servlet-name>
+    <servlet-class>com.gwm.sweethouse.servlet.ActivityServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>SaledServlet</servlet-name>
+    <servlet-class>com.gwm.sweethouse.servlet.SaledServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>ZZXOrderServlet</servlet-name>
+    <servlet-class>com.gwm.sweethouse.servlet.ZZXOrderServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>CompanyDetail</servlet-name>
+    <servlet-class>com.gwm.sweethouse.servlet.CompanyDetailServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>CompanyaPicServlet</servlet-name>
+    <servlet-class>com.gwm.sweethouse.servlet.CompanyaPicServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>DesOrderServlet</servlet-name>
+    <servlet-class>com.gwm.sweethouse.servlet.DesOrderServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>ZxCompanyServlet</servlet-name>
+    <servlet-class>com.gwm.sweethouse.servlet.ZxCompanyServlet</servlet-class>
+  </servlet>
+<servlet>
+    <servlet-name>OrderServlet</servlet-name>
+    <servlet-class>com.gwm.sweethouse.servlet.OrderServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>UploadServlet</servlet-name>
+    <servlet-class>com.gwm.sweethouse.servlet.UploadServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>DownloadImageServlet</servlet-name>
+    <servlet-class>com.gwm.sweethouse.servlet.DownloadImageServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>AddressServlet</servlet-name>
+    <servlet-class>com.gwm.sweethouse.servlet.AddressServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>MyWalletServlet</servlet-name>
+    <servlet-class>com.gwm.sweethouse.servlet.MyWalletServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>AdviceServlet</servlet-name>
+    <servlet-class>com.gwm.sweethouse.servlet.AdviceServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description></description>
+    <display-name>Cart_servlet</display-name>
+    <servlet-name>Cart_servlet</servlet-name>
+    <servlet-class>com.sh.servlet.Cart_servlet</servlet-class>
+  </servlet>
+ <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>Address</servlet-name>
+    <servlet-class>com.sh.servlet.Address</servlet-class>
+  </servlet>
+ <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>ChangeCart</servlet-name>
+    <servlet-class>com.sh.servlet.ChangeCart</servlet-class>
+  </servlet>
+
 
 
 
@@ -119,6 +202,70 @@
   <servlet-mapping>
     <servlet-name>RecommendServlet</servlet-name>
     <url-pattern>/recommendServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ActivityServlet</servlet-name>
+    <url-pattern>/activityServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>SaledServlet</servlet-name>
+    <url-pattern>/saledServlet</url-pattern>
+  </servlet-mapping>	
+  <servlet-mapping>
+    <servlet-name>ZZXOrderServlet</servlet-name>
+    <url-pattern>/ZZXOrderServlet</url-pattern>
+  </servlet-mapping>	
+   <servlet-mapping>
+    <servlet-name>ZxCompanyServlet</servlet-name>
+    <url-pattern>/ZxCompanyServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>CompanyDetail</servlet-name>
+    <url-pattern>/CompanyDetail</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>CompanyaPicServlet</servlet-name>
+    <url-pattern>/CompanyaPicServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>DesOrderServlet</servlet-name>
+    <url-pattern>/DesOrderServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>OrderServlet</servlet-name>
+    <url-pattern>/OrderServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>UploadServlet</servlet-name>
+    <url-pattern>/UploadServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>DownloadImageServlet</servlet-name>
+    <url-pattern>/DownloadImageServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>AddressServlet</servlet-name>
+    <url-pattern>/AddressServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>MyWalletServlet</servlet-name>
+    <url-pattern>/MyWalletServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>AdviceServlet</servlet-name>
+    <url-pattern>/AdviceServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>Cart_servlet</servlet-name>
+    <url-pattern>/Cart_servlet</url-pattern>
+  </servlet-mapping>
+<servlet-mapping>
+    <servlet-name>Address</servlet-name>
+    <url-pattern>/AddressServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ChangeCart</servlet-name>
+    <url-pattern>/ChangeCart</url-pattern>
   </servlet-mapping>	
   
   <welcome-file-list>

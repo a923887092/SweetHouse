@@ -113,6 +113,10 @@
         <td><input type="text" name="productSum" value="${product.product_sum }"/></td>
     </tr>   
     <tr>
+        <td class="tableleft">已售数量</td>
+        <td><input type="text" name="saledNum" value="${product.saled_num }"/></td>
+    </tr>   
+    <tr>
         <td class="tableleft">商品描述</td>
         <td><input type="text" name="productDesc" value="${product.product_desc }"/></td>
     </tr>   

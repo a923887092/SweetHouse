@@ -72,7 +72,7 @@ body {
 				<td>${product.product_photo }</td>
 				<td>${product.product_price }</td>
 				<td>${product.product_desc }</td>
-				<td><a href="RecommendServlet?method=getDLAndXl&id=${product.product_id }">修改</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="ProductServlet?method=delete&id=${product.product_id }">删除</a></td>
+				<td><a href="recommendServlet?method=getProductAndUpdate&id=${product.product_id }">修改</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="ProductServlet?method=delete&id=${product.rec_id }">删除</a></td>
 			</tr>
 		</c:forEach>
 	</table>
@@ -81,19 +81,19 @@ body {
 		当前第${RecommendPage.pageNo }页 &nbsp;&nbsp;
 
 		<c:if test="${RecommendPage.hasPrev }">
-			<a href="./RecommendServlet?method=getProduct&pageNo=1">首页</a>
+			<a href="./recommendServlet?method=getRecommendProduct&pageNo=1">首页</a>
 			&nbsp;&nbsp;
 			<a
-				href="./RecommendServlet?method=getProduct&pageNo=${RecommendPage.prevPage }">上一页</a>
+				href="./recommendServlet?method=getRecommendProduct&pageNo=${RecommendPage.prevPage }">上一页</a>
 		</c:if>
 		&nbsp;&nbsp;
 
 		<c:if test="${RecommendPage.hasNext }">
 			<a
-				href="./RecommendServlet?method=getProduct&pageNo=${RecommendPage.nextPage }">下一页</a>
+				href="./recommendServlet?method=getRecommendProduct&pageNo=${RecommendPage.nextPage }">下一页</a>
 			&nbsp;&nbsp;
 			<a
-				href="./RecommendServlet?method=getProduct&pageNo=${RecommendPage.totalPageNum }">末页</a>
+				href="./recommendServlet?method=getRecommendProduct&pageNo=${RecommendPage.totalPageNum }">末页</a>
 		</c:if>
 	</div>
 </body>
